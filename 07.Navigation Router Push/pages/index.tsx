@@ -16,3 +16,5 @@ const HomePage: NextPage = () => {
   }, [loggedIn]);
   return loggedIn ? <PrivateComponent /> : null;
 }
+
+export default HomePage;

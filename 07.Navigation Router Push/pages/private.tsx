@@ -5,4 +5,4 @@ const Private: NextPage = () => {
   return <PrivateComponent />;
 }
 
-export default Private
+export default Private;
