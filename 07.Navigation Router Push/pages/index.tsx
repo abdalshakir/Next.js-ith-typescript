@@ -1,13 +1,18 @@
 import type { NextPage } from "next";
-import NavBar from "../components/NavBar";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import PrivateComponent from "../components/PrivateComponent";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <NavBar></NavBar>
-      <h1>This is the Home page</h1>
-    </div>
-  );
-};
+const HomePage: NextPage = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-export default Home;
+  const router = useRouter();
+
+  useEffect(() => {
+    setLoggedIn(false);
+    if (!loggedIn) {
+      router.push('/login');
+    }
+  }, [loggedIn]);
+  return loggedIn ? <PrivateComponent /> : null;
+}
