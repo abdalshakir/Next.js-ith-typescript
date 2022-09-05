@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import { NextComponentType, NextPageContext } from "next";
+import type { NextComponentType, NextPageContext } from "next";
 
-interface Props {}
+interface Props { }
 
 const Greet: NextComponentType<NextPageContext, {}, Props> = (props: Props) => {
   const { query } = useRouter();
